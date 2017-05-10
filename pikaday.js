@@ -555,6 +555,7 @@
         {
             // IE allows pika div to gain focus; catch blur the input field
             var pEl = document.activeElement;
+            self._c = true;
             do {
                 if (hasClass(pEl, 'pika-single')) {
                     return;
@@ -640,7 +641,7 @@
             self.el.className += ' is-bound';
             addEvent(opts.trigger, 'click', self._onInputClick);
             addEvent(opts.trigger, 'focus', self._onInputFocus);
-            // addEvent(opts.trigger, 'blur', self._onInputBlur);
+            addEvent(opts.trigger, 'blur', self._onInputBlur);
         } else {
             this.show();
         }
@@ -1200,7 +1201,7 @@
                 if (this._o.bound) {
                     removeEvent(this._o.trigger, 'click', this._onInputClick);
                     removeEvent(this._o.trigger, 'focus', this._onInputFocus);
-                    // removeEvent(this._o.trigger, 'blur', this._onInputBlur);
+                    removeEvent(this._o.trigger, 'blur', this._onInputBlur);
                 }
             }
             if (this.el.parentNode) {
