@@ -574,8 +574,8 @@
         self._onClick = function(e)
         {
             e = e || window.event;
-            var target = e.target || e.srcElement,
-                pEl = target;
+            var target = e.target || e.srcElement;
+            // pEl = target;
             if (!target) {
                 return;
             }
@@ -585,15 +585,15 @@
                     addEvent(target, 'change', self._onChange);
                 }
             }
-            do {
-                if (hasClass(pEl, 'pika-single') || pEl === opts.trigger) {
-                    return;
-                }
-            }
-            while ((pEl = pEl.parentNode));
-            if (self._v && target !== opts.trigger && pEl !== opts.trigger) {
-                self.hide();
-            }
+            // do {
+            //     if (hasClass(pEl, 'pika-single') || pEl === opts.trigger) {
+            //         return;
+            //     }
+            // }
+            // while ((pEl = pEl.parentNode));
+            // if (self._v && target !== opts.trigger && pEl !== opts.trigger) {
+            //     self.hide();
+            // }
         };
 
         self.el = document.createElement('div');
