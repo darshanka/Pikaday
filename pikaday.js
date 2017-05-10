@@ -568,7 +568,7 @@
                     self.hide();
                 }, 50);
             }
-            self._c = false;
+            //  self._c = false;
         };
 
         self._onClick = function(e)
